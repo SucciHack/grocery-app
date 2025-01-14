@@ -59,7 +59,7 @@ export default function Carousel() {
     ];
 
     return (
-        <div id="default-carousel" className="relative w-[80%] mx-auto overflow-hidden mt-24 rounded-md" data-carousel="slide">
+        <div id="default-carousel" className="relative w-[95%] md:[95%] lg:[80%] mx-auto overflow-hidden mt-24 rounded-md h-[350px]" data-carousel="slide">
             <div
                 className="relative flex transition-transform duration-700 ease-in-out"
                 style={{ transform: `translateX(-${activeIndex * 100}%)` }}
@@ -67,7 +67,7 @@ export default function Carousel() {
             >
                 {slides.map((image, index) => (
                     <div key={index} className="min-w-full h-56 md:h-96">
-                        <Image src={image} className="w-full h-full object-cover" alt={`Slide ${index}`} width={6067} height={3467}/>
+                        <Image src={image} className="w-full h-[350px] object-cover" alt={`Slide ${index}`} width={6067} height={3467}/>
                     </div>
                 ))}
             </div>

@@ -7,16 +7,18 @@ import { CiCirclePlus } from "react-icons/ci";
 export default function Productcard({product}:{product:product}) {
   return (
     <div>
-    <div className="w-full max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-[#F1F3F6] overflow-hidden">
+    <div className="max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-[#F1F3F6] overflow-hidden w-[100%]">
         <div className="flex flex-col items-center">
             <Image className="w-[100%] block" src={product.productThumbnail} alt={product.name} width={300} height={300}/>
-            <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-gray-900">{product.name}</h5>
-                <div className="flex justify-between gap-12 dark:text-gray-900">
-                    <h2>{product.productPrice}</h2>
-                    <div className="flex items-center gap-1 text-lg">
-                        <CiCircleMinus/>
+            <div className='h-[50px]'>
+                <h5 className="text-sm text-gray-900 dark:text-gray-900 line-clamp-2 px-2 font-bold mb-2">{product.name}</h5>
+                </div>
+                <div className="flex justify-between gap-12 dark:text-gray-900 items-center">
+                    <h2>${product.productPrice}</h2>
+                    <div className="flex justify-center items-center gap-1 text-lg ">
+                        <button><CiCircleMinus/></button>
                         <p>0</p>
-                        <CiCirclePlus/>
+                        <button><CiCirclePlus/></button>
                     </div>
                 </div>
             <div className="flex mt-4 md:mt-6">
